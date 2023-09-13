@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.jsx';
 import Home from './pages/Home.jsx';
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/products" element={<AllProductsPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
       </div>
     

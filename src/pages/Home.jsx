@@ -1,10 +1,11 @@
 import React from 'react';
+import DisplayProducts from '../components/DisplayProducts/DisplayProducts.jsx';
 
 function Home() {
     return (
       <div>
         <h1>Homepage</h1>
-        {/* Add your product listings here */}
+        <DisplayProducts />
       </div>
     );
   }
