@@ -35,7 +35,7 @@ function DisplayProducts() {
     return (
       <div>
         {products.map((product) => (
-          <div>
+          <div key={product.id}>
               <Link to={`product/${product.id}`}>
                 <h2>{product.title}</h2>
                 <img src={product.imageUrl} alt={product.title} />
