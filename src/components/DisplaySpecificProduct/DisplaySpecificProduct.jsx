@@ -1,34 +1,13 @@
-import React, { useState, useEffect } from 'react'; 
 import { useParams } from 'react-router-dom'
 import { productsUrl } from '../../api/api.jsx'
+import useApi from '../../hooks/useApi.jsx';
 
 
 function DisplaySpecificProduct() {
     let { id } = useParams();
-    const [product, setProduct] = useState(null)
-    const [loading, setLoading] = useState(false);
-    const [throwError, setThrowError] = useState(false);
+    const { products, loading, throwError } = useApi(productsUrl+id)
 
-    useEffect(() => {
-        async function getProduct(url) {
-            try {
-                setLoading(true);
-                setThrowError(false);
-
-                const response = await fetch(url);
-                const result = await response.json();
-
-                setProduct(result);
-            } catch (error) {
-                setThrowError(true);
-                console.log(error);
-            } finally {
-                setLoading(false);
-            }
-        } getProduct(`${productsUrl}${id}`)
-    }, [id]);
-
-    if (loading || !product) {
+    if (loading || !products) {
         return <div>Loading</div>;
       }
     
@@ -38,9 +17,9 @@ function DisplaySpecificProduct() {
 
     return (
         <div>
-            <h1>{product.title}</h1>
-            <img src={product.imageUrl} />
-            <p>{product.description}</p>
+            <h1>{products.title}</h1>
+            <img src={products.imageUrl} />
+            <p>{products.description}</p>
         </div>)
 }
 
