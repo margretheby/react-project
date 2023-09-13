@@ -1,37 +1,17 @@
-import React, { useEffect, useState, useParams } from 'react'; 
 import { Link } from 'react-router-dom'
 import { productsUrl } from '../../api/api.jsx'
-import { DisplaySpecificProduct } from '../DisplaySpecificProduct/DisplaySpecificProduct.jsx'
+import useApi from '../../hooks/useApi.jsx';
 
 function DisplayProducts() {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [throwError, setThrowError] = useState(false);
+    const { products, loading, throwError } = useApi(productsUrl)
 
-    useEffect(() => {
-      async function getProducts() {
-          try {
-              setLoading(true);
-              setThrowError(false);
-
-              const response = await fetch(productsUrl);
-              const result = await response.json();
-
-              setProducts(result);
-              setLoading(false);
-          } catch (error) {
-              setLoading(false);
-              setThrowError(true);
-          }
-      }
-      getProducts();
-    }, []);
     if (loading) {
         return <div>Loading</div>
     }
     if (throwError) {
         return <div>Something went wrong.</div>
     }
+
     return (
       <div>
         {products.map((product) => (
