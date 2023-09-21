@@ -1,4 +1,3 @@
-import React from 'react';
 import DisplayProducts from '../components/DisplayProducts/DisplayProducts.jsx';
 
 function Home() {

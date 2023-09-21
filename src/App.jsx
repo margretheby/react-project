@@ -6,6 +6,7 @@ import ProductPage from './pages/ProductPage.jsx';
 import CartPage from './pages/CartPage.jsx';
 import Layout from './components/Layout/Layout.jsx';
 import AllProductsPage from './pages/AllProductsPage.jsx';
+import ContactPage from './pages/ContactPage.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/products" element={<AllProductsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
