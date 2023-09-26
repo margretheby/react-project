@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx'
 
 function Layout() {
     return (
-      <div>
+      <div className='flex flex-col justify-center items-center max-w-full'>
         <Header />
         <Outlet />
         <Footer />
