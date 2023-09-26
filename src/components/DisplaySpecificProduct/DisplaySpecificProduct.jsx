@@ -8,7 +8,11 @@ function DisplaySpecificProduct() {
     const { products, loading, throwError } = useApi(productsUrl+id)
 
     if (loading || !products) {
-        return <div>Loading</div>;
+        return (
+            <div className='animate-pulse pb-96 pt-20'>
+                <p className='text-5xl text-red'>...</p>
+            </div>
+        );
       }
     
     if (throwError) {

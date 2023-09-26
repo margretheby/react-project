@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header.jsx';
 import Home from './pages/Home.jsx';
 import ProductPage from './pages/ProductPage.jsx';
 import CartPage from './pages/CartPage.jsx';
@@ -10,14 +8,15 @@ import ContactPage from './pages/ContactPage.jsx';
 
 function App() {
   return (
-      <div>
-        <Layout />
+      <div className='bg-rose'>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/products" element={<AllProductsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/products" element={<AllProductsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+          </Route>
         </Routes>
       </div>
     
