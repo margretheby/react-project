@@ -1,5 +1,5 @@
 
-function CalculateDiscount(price, discountedPrice) {
+function calculateDiscount(price, discountedPrice) {
     const percentageOfPrice = (discountedPrice / price) * 100;
     const discountPercentage = 100 - percentageOfPrice;
     const stringPercentage = discountPercentage.toString();
@@ -7,4 +7,4 @@ function CalculateDiscount(price, discountedPrice) {
     return discountDisplayed;
 }
 
-export default CalculateDiscount;
+export default calculateDiscount;

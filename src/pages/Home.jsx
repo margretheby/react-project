@@ -1,4 +1,4 @@
-import DisplayProducts from '../components/DisplayProducts/DisplayProducts.jsx';
+import DisplayProducts from '../components/Products/Products.jsx';
 
 function Home() {
     return (

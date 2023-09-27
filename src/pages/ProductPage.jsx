@@ -1,13 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import DisplaySpecificProduct from '../components/DisplaySpecificProduct/DisplaySpecificProduct.jsx';
+import SpecificProduct from '../components/SpecificProduct/SpecificProduct.jsx';
 
 function ProductPage() {
   const { productId } = useParams();
 
   return (
     <div>
-      <DisplaySpecificProduct />
+      <SpecificProduct />
     </div>
   );
 }
