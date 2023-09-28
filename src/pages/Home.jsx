@@ -1,4 +1,4 @@
-import DisplayProducts from '../components/Products/Products.jsx';
+import Product from '../components/Product/Product.jsx';
 
 function Home() {
     return (
@@ -8,7 +8,7 @@ function Home() {
           <p>Hope you find what you're looking for.</p>
         </div>
 
-        <DisplayProducts />
+        <Product />
       </div>
     );
   }

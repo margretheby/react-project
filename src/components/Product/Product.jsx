@@ -3,7 +3,7 @@ import { productsUrl } from '../../api/api.jsx'
 import useApi from '../../hooks/useApi.jsx';
 import calculateDiscount from '../../functions/calculateDiscount/calculateDiscount.jsx';
 
-function DisplayProducts() {
+function Product() {
     const { products, loading, throwError } = useApi(productsUrl)
 
     if (loading) {
@@ -55,4 +55,4 @@ function DisplayProducts() {
   }
 
 
-  export default DisplayProducts;
+  export default Product;

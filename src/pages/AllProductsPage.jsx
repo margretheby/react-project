@@ -1,5 +1,5 @@
 import React from 'react';
-import DisplayProducts from '../components/Products/Products.jsx';
+import DisplayProducts from '../components/Product/Product.jsx';
 
 function AllProductsPage() {
     return (
