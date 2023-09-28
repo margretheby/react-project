@@ -9,8 +9,6 @@ function SpecificProduct() {
     let { id } = useParams();
     const { products, loading, throwError } = useApi(productsUrl+id)
 
-    console.log(products);
-
     if (loading || !products) {
         return (
             <div className='animate-pulse pb-96 pt-20'>
@@ -36,7 +34,7 @@ function SpecificProduct() {
                     <div className='flex justify-center mt-5'>
                         <h4 className='text-lg font-semibold'>{products.price} kr</h4>
                     </div>
-                    <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold'>Add to cart</button>
+                    <AddToCartButton />
                 </div>
               </div>
             </div>)
