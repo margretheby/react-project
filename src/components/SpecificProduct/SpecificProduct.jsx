@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { productsUrl } from '../../api/api.jsx'
 import calculateDiscount from '../../functions/calculateDiscount/calculateDiscount.jsx';
 import useApi from '../../hooks/useApi.jsx';
+import { AddToCartButton } from '../AddToCartButton/AddToCartButton.jsx'
 
 
 function SpecificProduct() {
@@ -33,7 +34,7 @@ function SpecificProduct() {
                     <div className='flex justify-center mt-5'>
                         <h4 className='text-lg font-semibold'>{products.price} kr</h4>
                     </div>
-                    <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold'>Add to cart</button>
+                    <AddToCartButton />
                 </div>
               </div>
             </div>)
@@ -54,7 +55,7 @@ function SpecificProduct() {
                     <h4 className='line-through text-red pr-5 text-lg'>{products.price} kr</h4>
                     <h4 className='pl-5 text-lg font-semibold'>{products.discountedPrice} kr</h4>
                 </div>
-                <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold'>Add to cart</button>
+                <AddToCartButton />
             </div>
           </div>
         </div>)
