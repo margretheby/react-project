@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { shallow } from 'zustand/shallow';
 import useItemsStore from '../../variables/useItemsStore.jsx'
 

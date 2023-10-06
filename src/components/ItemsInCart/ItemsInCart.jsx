@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { productsUrl } from '../../api/api.jsx'
+import { CartContext } from '../../App.jsx';
 import useApi from '../../hooks/useApi.jsx';
 
 // Display html in cart
@@ -7,9 +8,6 @@ function displayItemsInCart(product) {
     const productPrice = product.price;
     const productDiscountedPrice = product.discountedPrice;
     
-    function CalculateTotal() {
-        
-    } 
     return (
         <div>
         {productPrice === productDiscountedPrice ? 
@@ -41,66 +39,12 @@ function displayItemsInCart(product) {
                 </div>
             </div>
         </div>}
-        <div>
-            <CalculateTotal />
-        </div>
         </div>)
     }
 
-
-// Takes the ID of a product, and adds it to cartItem useState when button is clicked
-export function AddItemToCartButton(props) {
-    const itemId= props.parameter;
-    const itemPrice= props.itemPrice;
-    console.log(itemPrice);
-
-    // Load cart items from localStorage
-    const [ cartItem, setCartItem ] = useState(() => {
-        const storedItems = localStorage.getItem('cartItems');
-        if (storedItems) {
-            return JSON.parse(storedItems)
-        } else {
-            return [itemId]
-        }
-    });
-
-    // Update localStorage when itemPrices and cartItem changes
-    useEffect(() => {
-        localStorage.setItem('cartItems', JSON.stringify(cartItem));
-      }, [cartItem]);
-
-    // Load item prices from localStorage
-    const [ itemPrices, setItemPrices ] = useState(() => {
-        const storedPrices = localStorage.getItem('itemPrices');
-        if (storedPrices) {
-            return JSON.parse(storedPrices)
-        } else {
-            return [itemPrice]
-        }
-    });
-
-    // Update localStorage when itemPrices changes
-    useEffect(() => {
-        localStorage.setItem('itemPrices', JSON.stringify(itemPrices))
-    }, [itemPrice]);
-
-
-
-    function addItem() {
-        return setItemPrices([...itemPrices, `${itemPrice}`]), setCartItem([...cartItem, `${itemId}`]);
-        
-    }
-
-    return (
-        <button onClick={addItem} className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold'>Add to cart</button>
-    )
-}
-
 export function ItemsInCart() {
-    const itemsInCartFromStorage = localStorage.getItem('cartItems');
-    const itemsInCart = JSON.parse(itemsInCartFromStorage);
     const { products, loading, throwError } = useApi(productsUrl)
-
+    const { cart } = useContext(CartContext);
 
     if (loading) {
         return (
@@ -113,35 +57,16 @@ export function ItemsInCart() {
         return <div>Something went wrong.</div>
     }
 
-    function idInCartMatchesProductId() {
-        return <div key={products}>
-            {itemsInCart.map((productId) => {
-                if(productId !== null) {
-                    return products.map((product) => {
-                        const discountedPrice = product.discountedPrice;
-                        if(productId === product.id) {                  
-                            return displayItemsInCart(product);
-                        }
-                    })
-                }
-            }
-        )}
-        </div>         
-    }
 
-    return idInCartMatchesProductId();
-
+    return (
+        <div key={products}>
+        {cart.map(function (item) {
+            return (<div key={item.id} item={item}>
+                {displayItemsInCart(item)}
+            </div>)
+            })}
+        </div>)         
 }
-
-/*  function addTotal() {
-        // Not finished adding total
-        const priceArray = [discountedPrice];
-        console.log(priceArray);
-        const sum = priceArray.reduce((priceArray, currentTotal) => priceArray + currentTotal, 0)
-        console.log(sum);
-        return sum;
-    }
-    addTotal();     */
 
 
 

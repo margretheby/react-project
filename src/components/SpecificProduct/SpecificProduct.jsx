@@ -2,12 +2,16 @@ import { useParams } from 'react-router-dom'
 import { productsUrl } from '../../api/api.jsx'
 import calculateDiscount from '../../functions/calculateDiscount/calculateDiscount.jsx';
 import useApi from '../../hooks/useApi.jsx';
-import { AddItemToCartButton } from '../ItemsInCart/ItemsInCart.jsx'
+import { CartContext } from '../../App'
+import { useContext } from 'react';
 import { NumberOfCartItems } from '../NumberOfCartItems/NumberOfCartItems.jsx'
 
 
 function SpecificProduct() {
     let { id } = useParams();
+    const { setCart } = useContext(CartContext);
+
+
     const { products, loading, throwError } = useApi(productsUrl+id)
     if (loading || !products) {
         return (
@@ -39,7 +43,11 @@ function SpecificProduct() {
                     <div className='flex justify-center mt-5'>
                         <h4 className='text-lg font-semibold'>{products.price} kr</h4>
                     </div>
-                    <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice} />
+                    <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={() => {
+                      setCart(prevCart => ([...prevCart, products]))
+                    }}>
+                      Add to cart
+                    </button>
                 </div>
               </div>
               <div className='w-full'>
@@ -79,14 +87,17 @@ function SpecificProduct() {
                     <h4 className='line-through text-red pr-5 text-lg'>{products.price} kr</h4>
                     <h4 className='pl-5 text-lg font-semibold'>{products.discountedPrice} kr</h4>
                 </div>
-                <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice}/>
+                <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={() => {
+                  setCart(prevCart => ([...prevCart, products]))
+                }}>
+                  Add to cart
+                </button>
             </div>
           </div>
           </div>
           <div className='w-full'>
                 <h2 className='my-5 text-3xl'>Product reviews</h2>
                 {products.reviews.map((review) => {
-                  console.log(review);
                   return (
                     <div key={review.id} className='mt-10 bg-pink p-4 w-11/12'>
                       <div className='flex justify-between text-red'>
@@ -119,7 +130,11 @@ function SpecificProduct() {
                     <div className='flex justify-center mt-5'>
                         <h4 className='text-lg font-semibold'>{products.price} kr</h4>
                     </div>
-                    <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice} />
+                    <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={() => {
+                      setCart(prevCart => ([...prevCart, products]))
+                    }}>
+                      Add to cart
+                    </button>
                 </div>
               </div>
             </div>)
@@ -140,7 +155,11 @@ function SpecificProduct() {
                     <h4 className='line-through text-red pr-5 text-lg'>{products.price} kr</h4>
                     <h4 className='pl-5 text-lg font-semibold'>{products.discountedPrice} kr</h4>
                 </div>
-                <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice}/>
+                <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={() => {
+                  setCart(prevCart => ([...prevCart, products]))
+                  }}>
+                    Add to cart
+                </button>
             </div>
           </div>
         </div>)
