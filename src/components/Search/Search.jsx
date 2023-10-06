@@ -5,13 +5,13 @@ import calculateDiscount from '../../functions/calculateDiscount/calculateDiscou
 
 function DisplaySearchResult(product) {
     const productsArray = product.product;
-    if(productsArray.length === 0) {
+    /* if(productsArray.length === 0) {
         return (
             <div>
                 <h2 className="mt-2">Sorry, we don't seem to have the product you're looking for.</h2>
             </div>
         )
-    } else {
+    } else { */
         return (
         <div>
             {product.product.map((product) => {
@@ -47,7 +47,7 @@ function DisplaySearchResult(product) {
                 }        
             }) 
       }
-    </div>)}
+    </div>) /*} */
 }
 
 
@@ -77,7 +77,7 @@ function Search() {
             console.log(error);
         }
     }
-    console.log(searchResults)
+
     return (
         <div className="mt-5">
             <div className="flex">
