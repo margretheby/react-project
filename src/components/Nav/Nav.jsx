@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NumberOfCartItems } from '../NumberOfCartItems/NumberOfCartItems.jsx'
+import CartItem from '../CartIcon/CartIcon.jsx';
+import CartIcon from '../CartIcon/CartIcon.jsx';
 
 
 function Nav() {
@@ -19,7 +21,10 @@ function Nav() {
           </li>
           <li>
             <div className='flex'>
-              <Link to="/cart" className='focus:bg-pink hover:bg-pink pl-3 pr-1 py-2'>Cart </Link>
+              <Link to="/cart" className='focus:bg-pink hover:bg-pink pl-3 pr-1 py-2'>
+                <CartIcon />
+              </Link>
+              
               <NumberOfCartItems />
             </div>
 

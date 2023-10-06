@@ -20,6 +20,91 @@ function SpecificProduct() {
     if (throwError) {
         return <div>Error</div>;
     }
+    
+    const reviews = products.reviews;
+    //const reviewsLength = reviews.length;
+    //console.log(reviewsLength)
+
+    if (reviews) {
+      if (products.price === products.discountedPrice) {
+        return (
+            <div key={products.id}>
+              <div className='flex bg-pink max-w-fit mt-10 mb-16 text-center drop-shadow-xl'>
+                <div>
+                    <img src={products.imageUrl} alt={products.title} className='w-64' />
+                </div>
+                <div className='flex flex-col items-center justify-center max-w-sm mt-3'>
+                    <h2 className='my-5 text-3xl'>{products.title}</h2>
+                    <p className='max-w-xs mx-5'>{products.description}</p>
+                    <div className='flex justify-center mt-5'>
+                        <h4 className='text-lg font-semibold'>{products.price} kr</h4>
+                    </div>
+                    <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice} />
+                </div>
+              </div>
+              <div className='w-full'>
+                <h2 className='my-5 text-3xl'>Product reviews</h2>
+                {products.reviews.map((review) => {
+                  console.log(review);
+                  return (
+                    <div key={review.id} className='mt-10 bg-pink p-4 w-11/12'>
+                      <div className='flex justify-between text-red'>
+                        <p className='text-lg font-semibold'>{review.username}</p>
+                        <p className='text-lg font-semibold'>Rating: {review.rating}</p>
+                      </div>
+                      <div>
+                        <p className='italic ml-5 mt-2'>"{review.description}"</p>
+                      </div>
+                    </div>
+                  
+                  )
+                })}
+              </div>
+            </div>)
+    } else {
+      return (
+        <div key={products.id} className='max-w-fit mt-10 mb-16 drop-shadow-xl'>
+          <div  className='bg-pink max-w-fit mt-10 mb-16 text-center drop-shadow-xl'>
+          <div className='flex justify-end'>
+            <p className='bg-black text-white text-xl px-3 py-1 absolute'>-{calculateDiscount(products.price, products.discountedPrice)}%</p>
+          </div>
+          <div className='flex'>
+            <div>
+                <img src={products.imageUrl} alt={products.title} className='w-64' />
+            </div>
+            <div className='flex flex-col items-center justify-center max-w-sm mt-3'>
+                <h2 className='my-5 text-3xl'>{products.title}</h2>
+                <p className='max-w-xs mx-5'>{products.description}</p>
+                <div className='flex justify-center mt-5'>
+                    <h4 className='line-through text-red pr-5 text-lg'>{products.price} kr</h4>
+                    <h4 className='pl-5 text-lg font-semibold'>{products.discountedPrice} kr</h4>
+                </div>
+                <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice}/>
+            </div>
+          </div>
+          </div>
+          <div className='w-full'>
+                <h2 className='my-5 text-3xl'>Product reviews</h2>
+                {products.reviews.map((review) => {
+                  console.log(review);
+                  return (
+                    <div key={review.id} className='mt-10 bg-pink p-4 w-11/12'>
+                      <div className='flex justify-between text-red'>
+                        <p className='text-lg font-semibold'>{review.username}</p>
+                        <p className='text-lg font-semibold'>Rating: {review.rating}</p>
+                      </div>
+                      <div>
+                        <p className='italic ml-5 mt-2'>"{review.description}"</p>
+                      </div>
+                    </div>
+                  
+                  )
+                })}
+              </div>
+          
+        </div>)
+      }
+    }
 
     if (products.price === products.discountedPrice) {
         return (
