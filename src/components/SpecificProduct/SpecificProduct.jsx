@@ -2,13 +2,13 @@ import { useParams } from 'react-router-dom'
 import { productsUrl } from '../../api/api.jsx'
 import calculateDiscount from '../../functions/calculateDiscount/calculateDiscount.jsx';
 import useApi from '../../hooks/useApi.jsx';
-import { AddToCartButton } from '../AddToCartButton/AddToCartButton.jsx'
+import { AddItemToCartButton } from '../ItemsInCart/ItemsInCart.jsx'
+import { NumberOfCartItems } from '../NumberOfCartItems/NumberOfCartItems.jsx'
 
 
 function SpecificProduct() {
     let { id } = useParams();
     const { products, loading, throwError } = useApi(productsUrl+id)
-
     if (loading || !products) {
         return (
             <div className='animate-pulse pb-96 pt-20'>
@@ -34,7 +34,7 @@ function SpecificProduct() {
                     <div className='flex justify-center mt-5'>
                         <h4 className='text-lg font-semibold'>{products.price} kr</h4>
                     </div>
-                    <AddToCartButton />
+                    <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice} />
                 </div>
               </div>
             </div>)
@@ -55,7 +55,7 @@ function SpecificProduct() {
                     <h4 className='line-through text-red pr-5 text-lg'>{products.price} kr</h4>
                     <h4 className='pl-5 text-lg font-semibold'>{products.discountedPrice} kr</h4>
                 </div>
-                <AddToCartButton />
+                <AddItemToCartButton parameter={products.id} itemPrice={products.discountedPrice}/>
             </div>
           </div>
         </div>)
