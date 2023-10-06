@@ -5,6 +5,7 @@ import CartPage from './pages/CheckoutPage.jsx';
 import Layout from './components/Layout/Layout.jsx';
 import AllProductsPage from './pages/AllProductsPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import CheckoutSuccess from './pages/CheckoutSuccessPage.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/checkout" element={<CheckoutSuccess />} />
           </Route>
         </Routes>
       </div>

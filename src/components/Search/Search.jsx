@@ -89,7 +89,7 @@ function Search() {
                     value={searchQuery}
                     onKeyUp={handleSearch}>
                 </input>
-                <label htmlFor='search'><p className="text-red">Search</p></label>
+                <label htmlFor='search'><img src='../../icons/searchIcon.png' alt='search'></img></label>
             </div>
             <div>
                 <DisplaySearchResult product={searchResults} />

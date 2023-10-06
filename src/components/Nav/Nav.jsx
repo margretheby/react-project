@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NumberOfCartItems } from '../NumberOfCartItems/NumberOfCartItems.jsx'
-import CartItem from '../CartIcon/CartIcon.jsx';
 import CartIcon from '../CartIcon/CartIcon.jsx';
 
 
