@@ -5,9 +5,9 @@ import Nav from '../Nav/Nav.jsx'
 
 function Header() {
   return (
-    <header>
-      <div className="logo">
-        <Link to="/">Company Logo</Link>
+    <header className='flex justify-between w-11/12 pt-2'>
+      <div className="text-red text-5xl">
+        <Link to="/">Billie's</Link>
       </div>
       <Nav />
     </header>

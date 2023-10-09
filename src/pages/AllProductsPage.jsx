@@ -1,10 +1,10 @@
 import React from 'react';
-import DisplayProducts from '../components/DisplayProducts/DisplayProducts.jsx';
+import Product from '../components/Product/Product.jsx';
 
 function AllProductsPage() {
     return (
     <div>
-        <DisplayProducts />
+        <Product />
     </div>);
 }
 
