@@ -4,7 +4,7 @@ import { CartContext } from '../../App.jsx';
 export function CalculateTotal() {
     const { cart } = useContext(CartContext)
     const prices = cart.map((product) =>
-        console.log(product.price)
+        console.log(product.discountedPrice)
 
         )
     const sum = prices.reduce((accValue, currentValue) => accValue + currentValue, 0);

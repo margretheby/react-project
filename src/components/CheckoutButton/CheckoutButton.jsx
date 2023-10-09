@@ -6,6 +6,7 @@ export function CheckoutButton () {
     const { setCart } = useContext(CartContext);
     const handleEmptyCart = () => {
         setCart([]);
+        localStorage.clear();
     }
     return (
         <Link to='/checkout' >
