@@ -3,10 +3,17 @@ import { useContext } from 'react';
 import { CartContext } from '../../App.jsx';
 
 export function CheckoutButton () {
-    const { setCart } = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
     const handleEmptyCart = () => {
         setCart([]);
         localStorage.clear();
+    }
+    if(cart.length === 0)  {
+        return (
+            <Link to='/checkout' >
+                <button disabled className='bg-pink text-black px-6 py-2 mt-7 mb-10'>Nothing in cart</button>
+            </Link>
+        )
     }
     return (
         <Link to='/checkout' >
