@@ -4,7 +4,6 @@ import calculateDiscount from '../../functions/calculateDiscount/calculateDiscou
 import useApi from '../../hooks/useApi.jsx';
 import { CartContext } from '../../App'
 import { useContext } from 'react';
-import { NumberOfCartItems } from '../NumberOfCartItems/NumberOfCartItems.jsx'
 
 function SpecificProduct() {
     let { id } = useParams();
@@ -46,8 +45,6 @@ function SpecificProduct() {
     }
     
     const reviews = products.reviews;
-    //const reviewsLength = reviews.length;
-    //console.log(reviewsLength)
 
     if (reviews) {
       if (products.price === products.discountedPrice) {
@@ -74,7 +71,6 @@ function SpecificProduct() {
               <div className='w-full'>
                 <h2 className='my-5 text-3xl'>Product reviews</h2>
                 {products.reviews.map((review) => {
-                  console.log(review);
                   return (
                     <div key={review.id} className='mt-10 bg-pink p-4 w-11/12'>
                       <div className='flex justify-between text-red'>
@@ -90,7 +86,7 @@ function SpecificProduct() {
                 })}
               </div>
             </div>)
-    } else {
+    } else if (products.discountedPrice < products.price) {
       return (
         <div key={products.id} className='max-w-fit mt-10 mb-16 drop-shadow-xl'>
           <div  className='bg-pink max-w-fit mt-10 mb-16 text-center drop-shadow-xl'>

@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState, createContext } from 'react';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 import Home from './pages/Home.jsx';
 import ProductPage from './pages/ProductPage.jsx';
 import CartPage from './pages/CheckoutPage.jsx';
@@ -26,6 +27,7 @@ function App() {
           </Route>
         </Routes>
         </CartContext.Provider>
+        <ScrollToTop />
       </div>
     
   );
