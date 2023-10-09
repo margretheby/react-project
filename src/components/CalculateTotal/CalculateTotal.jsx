@@ -10,6 +10,10 @@ export function CalculateTotal() {
 
     const total = parseInt(sum, 10)
 
-    return <div>Total price: {total} kr</div>
-    
+    return (
+        <div className='mt-5 flex items-center justify-center flex-col'>
+            <h3 className='text-lg'>Total price:</h3>
+            <h3 className='text-3xl font-semibold my-5'>{total} kr</h3>      
+        </div>
+        )
 }

@@ -15,7 +15,7 @@ function CartPage() {
       <div>
         <CalculateTotal />
       </div>
-      <div>
+      <div className='flex justify-center'>
         <CheckoutButton />
         <EmptyCartButton />
       </div>
