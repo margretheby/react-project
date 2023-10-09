@@ -3,7 +3,7 @@ import React from "react";
 function CartIcon() {
     return (
         <div>
-            <img src="/../src/icons/cartIcon.png" alt="Cart" className='w-10' />
+            <img src="/icons/cart.png" alt="Cart" className='w-9' />
         </div>
         
     )

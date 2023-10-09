@@ -2,6 +2,7 @@ import React from 'react';
 import { ItemsInCart } from '../components/ItemsInCart/ItemsInCart.jsx'
 import { CheckoutButton } from '../components/CheckoutButton/CheckoutButton.jsx'
 import { CalculateTotal } from '../components/CalculateTotal/CalculateTotal.jsx'
+import { EmptyCartButton } from '../components/EmptyCartButton/EmptyCartButton.jsx'
 
 
 function CartPage() {
@@ -14,8 +15,9 @@ function CartPage() {
       <div>
         <CalculateTotal />
       </div>
-      <div>
+      <div className='flex justify-center'>
         <CheckoutButton />
+        <EmptyCartButton />
       </div>
     </div>
   );
