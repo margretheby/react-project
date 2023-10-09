@@ -3,12 +3,13 @@ import { CartContext } from '../../App.jsx';
 
 export function CalculateTotal() {
     const { cart } = useContext(CartContext)
-    const prices = cart.map((product) =>
-        console.log(product.discountedPrice)
 
-        )
-    const sum = prices.reduce((accValue, currentValue) => accValue + currentValue, 0);
-    console.log(sum);
-    return <div>Total price: {sum}</div>
+    const sum = cart.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.discountedPrice;
+    }, 0)
+
+    const total = parseInt(sum, 10)
+
+    return <div>Total price: {total} kr</div>
     
 }
