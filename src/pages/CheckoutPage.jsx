@@ -9,7 +9,7 @@ function CartPage() {
   return (
     <div>
       <div className='mt-12'>
-        <h1 className='text-3xl text-red pb-5'>Cart Page</h1>
+        <h1 className='text-3xl text-red pb-5'>Your cart</h1>
         <ItemsInCart />
       </div>
       <div>
