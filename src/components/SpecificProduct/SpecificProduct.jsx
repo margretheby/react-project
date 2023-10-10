@@ -65,9 +65,9 @@ function SpecificProduct() {
       if (products.price === products.discountedPrice) {
         return (
             <div key={products.id}>
-              <div className='flex gap-4 bg-pink mt-10 mb-16 text-center drop-shadow-xl'>
+              <div className='flex gap-4 bg-pink mt-10 mb-16 text-center drop-shadow-xl flex flex-col items-center sm:flex-row'>
                 <div>
-                    <img src={products.imageUrl} alt={products.title} className='w-64' />
+                    <img src={products.imageUrl} alt={products.title} className='w-fit sm:w-64' />
                 </div>
                 <div className='flex flex-col items-center justify-center max-w-sm mt-3'>
                     <h2 className='my-5 text-3xl'>{products.title}</h2>
