@@ -5,6 +5,20 @@ import useApi from '../../hooks/useApi.jsx';
 import { CartContext } from '../../App'
 import { useContext } from 'react';
 
+/* const Modal = () => {
+  return (
+    <div className='relative' aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div className="fixed inset-0">
+        <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-end sm:p-0">
+          <div className="relative bg-black text-pink font-semibold transform overflow-hidden rounded-lg text-center shadow-xl transition-all sm:my-8 sm:w-20 sm:max-w-lg">
+            <p className='py-2'>Added!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+} */
+
 function SpecificProduct() {
     let { id } = useParams();
     const { products, loading, throwError } = useApi(productsUrl+id)
@@ -27,7 +41,8 @@ function SpecificProduct() {
       } else {
         PutItemsInCart();
         localStorage.setItem("countItemsInCart", 1);
-      }
+      } 
+      return alert('The product was added to your cart');
     }
 
 
