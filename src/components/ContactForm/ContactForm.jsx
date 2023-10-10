@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form'
 
 function ContactForm() {
     const [ fullName, setFullName ] = useState('')
@@ -7,7 +6,7 @@ function ContactForm() {
     const [ email, setEmail ] = useState('')
     const [ body, setBody ] = useState('')
 
-    // Not finished
+
     function submitMessage() {
         alert('SUCCESS! Your message was sent')
         window.location.reload();
@@ -35,7 +34,6 @@ function ContactForm() {
     }
 
     function onTextInputChange(event) {
-        const value = event.target.value;
         if (event.target.name === 'full-name') {
             setFullName(event.target.value);
         }

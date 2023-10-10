@@ -4,14 +4,6 @@ import { productsUrl } from '../../api/api.jsx';
 import calculateDiscount from '../../functions/calculateDiscount/calculateDiscount.jsx';
 
 function DisplaySearchResult(product) {
-    const productsArray = product.product;
-    /* if(productsArray.length === 0) {
-        return (
-            <div>
-                <h2 className="mt-2">Sorry, we don't seem to have the product you're looking for.</h2>
-            </div>
-        )
-    } else { */
         return (
         <div>
             {product.product.map((product) => {
@@ -57,10 +49,9 @@ function Search() {
 
     function handleKeyUp(search) {
         const filteredSearch = search.filter(function (product) {
-            if (product.title.toLowerCase().includes(searchQuery.toLowerCase())) {
-                return product;
-            } 
+            return product.title.toLowerCase().includes(searchQuery.toLowerCase())
         })
+        
         setSearchResults(filteredSearch);
         DisplaySearchResult(searchResults);
     }
