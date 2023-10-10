@@ -3,7 +3,7 @@ import calculateDiscount from '../calculateDiscount/calculateDiscount.jsx';
 
 export function productCard(products) {
     return (
-        <div className='drop-shadow-xl'>
+        <div className='drop-shadow-xl flex gap-5 flex-wrap  justify-center'>
           {products.map((product) => {
             if (product.price === product.discountedPrice) {
               return (

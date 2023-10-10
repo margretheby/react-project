@@ -8,14 +8,10 @@ function ContactForm() {
 
 
     function submitMessage() {
-        alert('SUCCESS! Your message was sent')
-        window.location.reload();
-        
-        return (
-        <div>
-            <h1>Success!</h1>
-        </div>
-        );
+        // alert('Success! Your message was sent')
+        // window.location.reload();
+        const successMessage = 'SUCCESS! Your message was sent'
+        return successMessage;
     }
 
     function onFormSubmit(event) {
@@ -81,19 +77,25 @@ function ContactForm() {
                     required
                     onChange={onTextInputChange} />
                 <label htmlFor="body">Body</label>
-                <input 
+                <textarea 
                     value={body} 
                     type='text' 
                     name="body" 
                     minLength='3' 
                     placeholder="Your message" 
-                    className='mb-2 p-1 h-16' 
+                    className='mb-2 p-1 h-16 w-46 flex' 
                     required
                     onChange={onTextInputChange} />
                 <div className='flex justify-center'>
                     <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-6 font-semibold'>Submit form</button>
                 </div>
             </form>
+
+            {// Not finished 
+            }
+            <div className={onTextInputChange ? 'block mx-2 pb-3' : 'hidden'}>
+                <p>Success! You're message was sent.</p>
+            </div>
         </div>
     )
 }
