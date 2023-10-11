@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className='mt-48 text-red mb-5'>
+    <footer className='text-red mb-5 mt-20'>
         <ul className='flex flex-row'>
           <li className='mx-4'>
             <Link to="/">Home</Link>

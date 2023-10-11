@@ -7,9 +7,9 @@ import { EmptyCartButton } from '../components/EmptyCartButton/EmptyCartButton.j
 
 function CartPage() {
   return (
-    <div>
+    <div className='h-screen'>
       <div className='mt-12'>
-        <h1 className='text-3xl text-red pb-5'>Your cart</h1>
+        <h1 className='text-5xl text-red pb-5 text-center'>Your cart</h1>
         <ItemsInCart />
       </div>
       <div>
