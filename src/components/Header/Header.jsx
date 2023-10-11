@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../Nav/Nav.jsx'
 
+// Header component with logo and navigation
 function Header() {
   return (
     <header className='flex justify-between w-11/12 pt-2'>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartIcon from '../CartIcon/CartIcon.jsx';
 
-
+// Responsive design layout
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -54,7 +54,7 @@ function Nav() {
           </ul>
         </div>
       </div>
-      <div className='order-2 flex justify-start items-start'>
+      <div className='order-2 px-3 flex justify-start items-start'>
         <Link to='/cart' className='focus:bg-pink hover:bg-pink px-3'>
           <CartIcon />
         </Link>

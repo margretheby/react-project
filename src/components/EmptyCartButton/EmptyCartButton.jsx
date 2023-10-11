@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { CartContext } from '../../App.jsx';
 
+// Button to clear localStorage and empty cart state.
 export function EmptyCartButton () {
     const { cart, setCart } = useContext(CartContext);
     const handleEmptyCart = () => {

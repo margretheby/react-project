@@ -95,12 +95,6 @@ function ContactForm() {
                     <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-6 font-semibold'>Submit form</button>
                 </div>
             </form>
-
-            { /* Not finished 
-            
-            <div className={onTextInputChange ? 'block mx-2 pb-3' : 'hidden'}>
-                <p>Success! You're message was sent.</p>
-            </div>*/}
         </div>
     )
 }
