@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NumberOfCartItems } from '../NumberOfCartItems/NumberOfCartItems.jsx'
 import CartIcon from '../CartIcon/CartIcon.jsx';
 
 
@@ -59,7 +58,6 @@ function Nav() {
         <Link to='/cart' className='focus:bg-pink hover:bg-pink px-3'>
           <CartIcon />
         </Link>
-        <NumberOfCartItems />
       </div>
     </nav>
   );
