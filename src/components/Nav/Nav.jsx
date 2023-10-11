@@ -56,7 +56,7 @@ function Nav() {
         </div>
       </div>
       <div className='order-2 flex justify-start items-start'>
-        <Link to='/cart' className='focus:bg-pink hover:bg-white px-3'>
+        <Link to='/cart' className='focus:bg-pink hover:bg-pink px-3'>
           <CartIcon />
         </Link>
         <NumberOfCartItems />
