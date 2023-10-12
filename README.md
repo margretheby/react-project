@@ -1,13 +1,14 @@
 # JavaScript Framework Course Assignment
-<img src="https://github.com/margretheby/semester-project-2/blob/main/Screenshot-bidbox.png" alt="Screenshot of the Billie's website on desktop">
+<img src="https://github.com/margretheby/react-project/blob/main/billies.png" alt="Screenshot of the Billie's website on desktop">
 
 ## Description
-This was an assignment the second semester of second year at from Noroff school of technology and digital media: 
-
-The API you are using for this brief is: https://api.noroff.dev/api/v1/online-shop. You can find individual items by appending a product ID at the end of the API URL e.g. https://api.noroff.dev/api/v1/online-shop/f99cafd2-bd40-4694-8b33-a6052f36b435.
+This was an assignment the second semester of second year at from Noroff school of technology and digital media. The main purpose was to apply what we had learn during the JavaScript Framework course.
 
 ### Goal
 To apply knowledge of React to build an eCom store. 
+
+## Brief
+The API you are using for this brief is: https://api.noroff.dev/api/v1/online-shop. You can find individual items by appending a product ID at the end of the API URL e.g. https://api.noroff.dev/api/v1/online-shop/f99cafd2-bd40-4694-8b33-a6052f36b435.
 
 ### Pages
 You are tasked with build out the following pages for an eCom store:
@@ -15,29 +16,42 @@ You are tasked with build out the following pages for an eCom store:
 - Individual product page
 - Cart page
 - Checkout success page
+- Contact page
 
-### Requirements
-- The Homepage should have a list of all the products. There should be a look-ahead search bar that filters products when typing in a product name. Clicking on a product should take a user to an individual product page.
+### General
 - You pages should use a <Layout> component that contains a header and footer. The header should contain a nav bar as well as a Cart icon component that acts as a button as well as displays the current number of items in the cart.
-- The individual product page should display data for a single product. There should be an Add to cart button which, upon clicking, adds the product to the cart. The product page should display the title of the product, the description and the image. There should also be reviews listed for the product, if there are any. You should use the discountedPrice property to display the price of the product. If there is a difference between the discountedPrice and price properties then that means there is a discount for that product. Calculate what this discount is and display it on the page.
-- Clicking on the Cart icon will load the Cart page, which will list all of the products as well as a total. The Cart page will have a Checkout button. Clicking this Checkout button then goes to a Checkout success page.
-- The Checkout success page will display a message to the user notifying them that their order was successful. There should also be a link that lets a user go back to the store. The cart must be cleared if the user gets to the Checkout success page.
-- There will be a contact page which will contain a contact form with the following fields. There must be form validation:
+- You will be using React Router to switch between pages.
+- Your design should be responsive. 
+- You are welcome to use a CSS Framework, however, you’re encouraged to design from scratch and use styled-components or CSS Modules.
+- You are not required to use TypeScript.
 
-Full name (Minimum number of characters is 3, required)
-Subject (Minimum number of characters is 3, required)
-Email (Must be a valid email address, required)
-Body (Minimum number of characters is 3, required)
-You will be using React Router to switch between pages.
+### Homepage
+- The Homepage should have a list of all the products. There should be a look-ahead search bar that filters products when typing in a product name. Clicking on a product should take a user to an individual product page.
 
-- Your design should be responsive. You are welcome to use a CSS Framework, however, you’re encouraged to design from scratch and use styled-components or CSS Modules.
+### Individual product page
+- The individual product page should display data for a single product. 
+- There should be an Add to cart button which, upon clicking, adds the product to the cart. 
+- The product page should display the title of the product, the description and the image. 
+- There should also be reviews listed for the product, if there are any. 
+- You should use the discountedPrice property to display the price of the product. 
+- If there is a difference between the discountedPrice and price properties then that means there is a discount for that product. Calculate what this discount is and display it on the page.
 
-You are not required to use TypeScript.
+### Cart page 
+- Clicking on the Cart icon will load the Cart page, which will list all of the products as well as a total. 
+- The Cart page will have a Checkout button. Clicking this Checkout button then goes to a Checkout success page.
 
-Your code is expected to be clean and well-formatted.
+### Checkout success page 
+- The Checkout success page will display a message to the user notifying them that their order was successful. 
+- There should be a link that lets a user go back to the store. 
+- The cart must be cleared if the user gets to the Checkout success page.
 
-### Technical restrictions
-The 
+### Contact page
+- There will be a contact page which will contain a contact form with the following fields. 
+- There must be form validation:
+1. Full name (Minimum number of characters is 3, required)
+2. Subject (Minimum number of characters is 3, required)
+3. Email (Must be a valid email address, required)
+4. Body (Minimum number of characters is 3, required)
 
 ## Built with
 - React
