@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { CartContext } from '../../App.jsx';
 
+// button to checkout if there are items in cart and disabled if the cart is empty
 export function CheckoutButton () {
     const { cart, setCart } = useContext(CartContext);
     const handleEmptyCart = () => {

@@ -5,44 +5,30 @@ import useApi from '../../hooks/useApi.jsx';
 import { CartContext } from '../../App'
 import { useContext } from 'react';
 
-/* const Modal = () => {
-  return (
-    <div className='relative' aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div className="fixed inset-0">
-        <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-end sm:p-0">
-          <div className="relative bg-black text-pink font-semibold transform overflow-hidden rounded-lg text-center shadow-xl transition-all sm:my-8 sm:w-20 sm:max-w-lg">
-            <p className='py-2'>Added!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-} */
-
+// Fetch and display a specific product based on the id parameter
 function SpecificProduct() {
     let { id } = useParams();
     const { products, loading, throwError } = useApi(productsUrl+id)
 
-    const { setCart } = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
 
+    // Add product to cart state and update localStorage with cart and product count
     function CountItemsInCart() {
-      
       const PutItemsInCart = () => {
         setCart(prevCart => ([...prevCart, products]));
+
+        const updatedCart = [...cart, products];
+        localStorage.setItem("localStorageCart", JSON.stringify(updatedCart));
+
+        let localStorageCounter = localStorage.getItem("countItemsInCart");
+        localStorageCounter = parseInt(localStorageCounter) || 0;
+        localStorageCounter += 1;
+        localStorage.setItem("countItemsInCart", localStorageCounter);
       }
 
-  
-      let localStorageCounter = localStorage.getItem("countItemsInCart");
-      localStorageCounter = parseInt(localStorageCounter);
-      
-      if (localStorageCounter) {
-        PutItemsInCart();
-        localStorage.setItem("countItemsInCart", localStorageCounter + 1);
-      } else {
-        PutItemsInCart();
-        localStorage.setItem("countItemsInCart", 1);
-      } 
-      return alert('The product was added to your cart');
+      PutItemsInCart();
+
+     return alert('Great! The product was added to your cart.')
     }
 
 
@@ -75,7 +61,7 @@ function SpecificProduct() {
                     <div className='flex justify-center mt-5'>
                         <h4 className='text-lg font-semibold'>{products.price} kr</h4>
                     </div>
-                    <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={CountItemsInCart}>
+                    <button id='confirm' className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={CountItemsInCart}>
                       Add to cart
                     </button>
                 </div>
@@ -119,7 +105,7 @@ function SpecificProduct() {
                     <h4 className='line-through text-red pr-5 text-lg'>{products.price} kr</h4>
                     <h4 className='pl-5 text-lg font-semibold'>{products.discountedPrice} kr</h4>
                 </div>
-                <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={CountItemsInCart}>
+                <button id="add-button" className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-10 font-semibold' onClick={CountItemsInCart}>
                   Add to cart
                 </button>
             </div>

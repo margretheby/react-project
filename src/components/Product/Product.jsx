@@ -3,6 +3,7 @@ import { productsUrl } from '../../api/api.jsx'
 import useApi from '../../hooks/useApi.jsx';
 import { productCard } from '../../functions/productCard/productCard.jsx'
 
+// Fetching products from API, catching loading/errors and displaying products
 function Product() {
     const { products, loading, throwError } = useApi(productsUrl)
     const [ allProducts, setAllProducts ] = useState([]);

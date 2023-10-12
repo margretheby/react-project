@@ -25,6 +25,7 @@ function ContactForm() {
         }
 
         console.log(contactMessage)
+        alert('Success! Your message was sent.')
         return submitMessage();
         
     }
@@ -52,6 +53,7 @@ function ContactForm() {
                     value={fullName} 
                     type="text" 
                     name="full-name" 
+                    id="full-name"
                     minLength='3' 
                     placeholder="Your full name" 
                     className='mb-4 p-1' 
@@ -61,7 +63,8 @@ function ContactForm() {
                 <input 
                     value={subject} 
                     type="text" 
-                    name="subject" 
+                    name="subject"
+                    id="subject"
                     minLength='3' 
                     placeholder="Subject" 
                     className='mb-4 p-1' 
@@ -72,6 +75,7 @@ function ContactForm() {
                     value={email} 
                     type="email" 
                     name="email" 
+                    id="email"
                     placeholder="Your email" 
                     className='mb-4 p-1' 
                     required
@@ -81,6 +85,7 @@ function ContactForm() {
                     value={body} 
                     type='text' 
                     name="body" 
+                    id="body"
                     minLength='3' 
                     placeholder="Your message" 
                     className='mb-2 p-1 h-16 w-46 flex' 
@@ -90,12 +95,6 @@ function ContactForm() {
                     <button className='bg-black text-rose hover:bg-red hover:text-black px-6 py-2 mt-7 mb-6 font-semibold'>Submit form</button>
                 </div>
             </form>
-
-            {// Not finished 
-            }
-            <div className={onTextInputChange ? 'block mx-2 pb-3' : 'hidden'}>
-                <p>Success! You're message was sent.</p>
-            </div>
         </div>
     )
 }
