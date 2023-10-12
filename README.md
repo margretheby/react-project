@@ -49,5 +49,5 @@ The
 
 ``` 
 git clone git@github.com:margretheby/react-project.git
-npm start
+npm install
 ```

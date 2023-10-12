@@ -13,6 +13,9 @@ function Footer() {
             <Link to="/products">Products</Link>
           </li>
           <li className='mx-4'>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li className='mx-4'>
             <Link to="/cart">Cart</Link>
           </li>
         </ul>
