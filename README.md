@@ -1,8 +1,10 @@
 # JavaScript Framework Course Assignment
 <img src="https://github.com/margretheby/react-project/blob/main/billies.png" alt="Screenshot of the Billie's website on desktop">
-This was the course assignment after five weeks of learning React in the fall of 2023, during the frontend course at from Noroff school of technology and digital media.
+This was the course assignment in the fall of 2023, during the frontend course at from Noroff school of technology and digital media.
 
 ## Description
+After five weeks of learning React, the assignment was to create a website for an eCommerce store.
+
 ### Goal
 To apply knowledge of React to build an eCom store. 
 
