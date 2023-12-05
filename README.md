@@ -59,8 +59,10 @@ You are tasked with build out the following pages for an eCom store:
 4. Body (Minimum number of characters is 3, required)
 
 ## Built with
-- React
 - Tailwind
+- React, including:  
+    - React Hook Form
+    - React Router Dom
 
 ## Getting started
 ### Installing
