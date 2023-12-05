@@ -1,9 +1,8 @@
 # JavaScript Framework Course Assignment
 <img src="https://github.com/margretheby/react-project/blob/main/billies.png" alt="Screenshot of the Billie's website on desktop">
+This was the course assignment after five weeks of learning React in the fall of 2023, during the frontend course at from Noroff school of technology and digital media.
 
 ## Description
-This was an assignment the second semester of second year at from Noroff school of technology and digital media. The main purpose was to apply what we had learn during the JavaScript Framework course.
-
 ### Goal
 To apply knowledge of React to build an eCom store. 
 
@@ -65,3 +64,9 @@ You are tasked with build out the following pages for an eCom store:
 git clone git@github.com:margretheby/react-project.git
 npm install
 ```
+
+## Contact
+- <a href="https://mby-portfolio.netlify.app" target="_blank">Portfolio</a>
+- <a href="https://www.linkedin.com/in/margrethe-by-6abb98226/" target="_blank">LinkedIn</a>
+- <a href="https://github.com/margretheby" target="_blank">GitHub</a>
+- <a href="mailto:margrethe.developer@gmail.com">margrethe.developer@gmail.com</a>
