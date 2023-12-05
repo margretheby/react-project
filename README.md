@@ -8,6 +8,9 @@ After five weeks of learning React, the assignment was to create a website for a
 ### Goal
 To apply knowledge of React to build an eCom store. 
 
+### Links
+- <a href="https://billies.netlify.app" target="_blank">Billie's website</a>
+
 ## Brief
 The API you are using for this brief is: https://api.noroff.dev/api/v1/online-shop. You can find individual items by appending a product ID at the end of the API URL e.g. https://api.noroff.dev/api/v1/online-shop/f99cafd2-bd40-4694-8b33-a6052f36b435.
 
